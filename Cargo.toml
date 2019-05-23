@@ -6,5 +6,6 @@ edition = "2018"
 license = "Apache-2.0 AND BSD-3-Clause"
 
 [dependencies.vm-memory]
-git = "https://github.com/rust-vmm/vm-memory"
+git = "https://github.com/sboeuf/vm-memory"
+branch = "add_fd_support"
 features = ["backend-mmap"]
