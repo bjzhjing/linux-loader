@@ -1,0 +1,23 @@
+[[package]]
+name = "libc"
+version = "0.2.55"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
+name = "linux-loader"
+version = "0.1.0"
+dependencies = [
+ "vm-memory 0.1.0 (git+https://github.com/sboeuf/vm-memory?branch=add_fd_support)",
+]
+
+[[package]]
+name = "vm-memory"
+version = "0.1.0"
+source = "git+https://github.com/sboeuf/vm-memory?branch=add_fd_support#19733a4988347ff1d243551e88986c83fe55cdd4"
+dependencies = [
+ "libc 0.2.55 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[metadata]
+"checksum libc 0.2.55 (registry+https://github.com/rust-lang/crates.io-index)" = "42914d39aad277d9e176efbdad68acb1d5443ab65afe0e0e4f0d49352a950880"
+"checksum vm-memory 0.1.0 (git+https://github.com/sboeuf/vm-memory?branch=add_fd_support)" = "<none>"
