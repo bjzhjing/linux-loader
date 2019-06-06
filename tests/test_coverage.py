@@ -26,14 +26,23 @@ def _get_current_coverage():
     shutil.rmtree(kcov_ouput_dir, ignore_errors=True)
     shutil.rmtree(kcov_build_dir, ignore_errors=True)
 
+    crate_path = os.path.dirname(os.path.dirname(__file__))
+    print(crate_path)
+    bootparam_path = os.path.join(crate_path, 'src/loader/bootparam.rs')
+    print(bootparam_path)
+    elf_path = os.path.join(crate_path, 'src/loader/elf.rs')
+    print(elf_path)
+
     exclude_pattern = (
         '${CARGO_HOME:-$HOME/.cargo/},'
         'usr/lib/,'
         'lib/'
+        '${bootparam_path},'
+        '${elf_path}'
     )
     exclude_region = "'mod tests {'"
 
-    kcov_cmd = "CARGO_TARGET_DIR={} cargo kcov --all " \
+    kcov_cmd = "CARGO_TARGET_DIR={} cargo kcov --all --features=elf,bzImage " \
                "--output {} -- " \
                "--exclude-region={} " \
                "--exclude-pattern={} " \
