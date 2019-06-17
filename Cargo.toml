@@ -11,5 +11,6 @@ elf = []
 bzimage = []
 
 [dependencies.vm-memory]
-git = "https://github.com/rust-vmm/vm-memory"
+git = "https://github.com/bjzhjing/vm-memory"
+branch = "add-hugepages-support"
 features = ["backend-mmap"]
